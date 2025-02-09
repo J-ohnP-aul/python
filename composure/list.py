@@ -36,5 +36,19 @@ for value in range(1,11):
 
 print(sum(squares))
 
-squares = [value**2 for value in range(1,11)]
+odd = [num+1 for num in range(1,20)]
+print(odd)
+
+squares = [value**2 for value in range(1,11)] #list comprehencion
 print(squares)
+
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+# print(players[:3])
+for player in players[:3]:
+    print(player.title())
+# list comprehension using list slicing
+maarif = [arif for arif in players[1:]]
+print(maarif)
+wachezaji = players[:]
+wachezaji.append('oyoo')
+print(wachezaji)
