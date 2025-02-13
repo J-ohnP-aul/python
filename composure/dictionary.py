@@ -33,7 +33,7 @@ alien_0['x_position'] = alien_0['x_position'] + x_increment
 
 print("alien new xposition : " + str(alien_0['x_position']))
 
-# storing info about many diff objects
+# storing info about many diff objects``
 favourite_language = {
     'ryan': 'svelteKit',
     'reagy': 'Js',
@@ -70,4 +70,75 @@ alien_2 = {'color': 'red', 'points': 15}
 
 aliens = [alien_0, alien_1, alien_2]
 for alien in aliens:
-    print(alien.keys())
+    print(alien)
+
+print("\n")
+# empty list
+aliens = []
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+# show the first five aliens
+for alien in aliens[:5]:
+    print(alien)
+print('....')
+
+# show how many aliens have been created
+print("total number of alien: "+ str(len(aliens)))
+
+# to change color speed and points of 1st 3 alien
+
+for alien in aliens[0:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['speed'] = 'medium'
+        alien['points'] = 10
+    elif alien['color'] == 'yellow':
+        alien['color'] = 'red'
+        alien['speed'] = 'fast'
+        alien['points'] = 15
+
+# show first 5 alien
+for alien in aliens[0:5]:
+    print(alien)
+print('....')
+# list in dictionary
+
+JP = {
+    'sport': 'rugby',
+    'rugby_position':['center', 'fullback', 'linker']
+}
+print("you love playing "+JP['sport'] + " the following positions:")
+for number in JP['rugby_position']:
+    print("\t" + number)
+
+favourite_languages = {
+    'ryan': ['pyhton', 'sveltekit','java'],
+    'reagy': ['html','Jscript', 'css'],
+    'noble': ['python','jscript'],
+    'johnte': ['C', 'python', 'c#']
+}
+for name,langs in favourite_languages.items():
+    print('\n' + name.title() + "'s favourite languages are: ")
+    for lang in langs:
+        print('\t'+ lang)
+
+# nested dictionaries
+girls = {
+    'Mika':{
+        'color': 'brown',
+        'tribe': 'gusi',
+        'age': 'ideal'
+    },
+    'yvonne':{
+        'color': "fine melanin",
+        'tribe': 'westernised',
+        'age': 'mature'
+    }
+}
+for dem, data in girls.items():
+    print('\n her name: '+ dem)
+    print(dem + ' color is: '+ data['color'])
+    print("her dialiect lies within the :" + data["tribe"])
+    print('its just a number but she is always '+ data["age"])
