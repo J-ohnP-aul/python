@@ -1,4 +1,5 @@
 import os
+import color as paint
 filename = '/home/noble/Desktop/python/composure/proj/data.txt'
 with open(filename) as filedtb:
     data_lines = filedtb.readlines()
@@ -9,6 +10,7 @@ for line in data_lines:
 
 os.system('clear')
 def displayMenu():
+    print(paint.Colors.COLOR_BLUE)
     print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign in')
     option = input("\n  Enter an option __:")
     return option
@@ -23,6 +25,10 @@ if int(opt) == 1:
                 print("\n>>>> welcomeback "+ userName + " !") 
             else:
                 print("invalid password")  
+        else:
+            os.system('clear')
+            print('!!>>WRONG USER NAME')
+            
 else:
     name = input('enter your name: ')
     id = input('enter your d NO: ')
