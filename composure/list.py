@@ -51,4 +51,4 @@ maarif = [arif for arif in players[1:]]
 print(maarif)
 wachezaji = players[:]
 wachezaji.append('oyoo')
-print(wachezaji)
+print(wachezaji[5])
