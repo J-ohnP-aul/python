@@ -10,12 +10,18 @@ for line in data_lines:
 
 os.system('clear')
 def displayMenu():
-    print(paint.Colors.COLOR_BLUE)
+    print(paint.Colors.COLOR_RED)
     print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign in')
-    option = input("\n  Enter an option __:")
-    return option
+    try:
+        option = int(input("\n  Enter an option __:"))
+    except ValueError:
+        print('invalid input!!')
+        
+    else:
+        return option
+
 opt = displayMenu()
-if int(opt) == 1:    
+if opt == 1:    
 # print(userdata)
     userName = input("Enter your user name pliz: ")
     for name in userdata:
@@ -26,8 +32,7 @@ if int(opt) == 1:
             else:
                 print("invalid password")  
         else:
-            os.system('clear')
-            print('!!>>WRONG USER NAME')
+            continue
             
 else:
     name = input('enter your name: ')
@@ -39,7 +44,7 @@ else:
         os.system('clear')
         print('password confirmed!!')
         with open(filename, 'a') as fapend:
-            fapend.write('\n'+name +' '+ 'id' + ' '+ pass1)
+            fapend.write('\n'+name +' '+ id + ' '+ pass1)
     else:
         print('invalid password!!')
         
