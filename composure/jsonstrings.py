@@ -6,3 +6,7 @@ filename  = 'num.json'
 with open(filename, 'w') as file_obj:
     j.dump(numbers, file_obj)
     
+with open(filename) as Fr:
+    numbers = j.load(Fr)
+    
+print(numbers)
