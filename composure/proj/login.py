@@ -10,15 +10,19 @@ for line in data_lines:
 
 os.system('clear')
 def displayMenu():
-    print(paint.Colors.COLOR_RED)
+    print(paint.Colors.COLOR_CYAN)
     print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign in')
-    try:
-        option = int(input("\n  Enter an option __:"))
-    except ValueError:
-        print('invalid input!!')
-        
-    else:
-        return option
+    while True:
+        try:
+            option = int(input("\n  Enter an option __:"))
+        except ValueError:
+            os.system('clear')
+            print(paint.Colors.COLOR_YELLOW)
+            print('\TINVALID INPUT\n')
+            print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign in')
+            
+        else:
+            return option
 
 opt = displayMenu()
 if opt == 1:    
