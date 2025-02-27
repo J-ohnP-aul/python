@@ -1,13 +1,16 @@
 import unittest
 from names import greetUser
 
-class NameTestCase(unittest.TestCase):
-    '''test for name function '''
-    def testfirst_lastNmae(self):
-        '''do names  like ""janis Joplin work'''
-        fommatedNme = greetUser('janis','joplin')
-        self.assertEqual(fommatedNme, 'Janis Joplin')
-    
+class NameTest(unittest.TestCase):
+    '''test names.py func'''
+    def test_fist_last(self):# the test func must start eith test_S
+        '''do names like john Paul work'''
+        fommatname = greetUser('john','paul')
+        self.assertEqual(fommatname, 'John Paul')
+    def test_fst_last_midlename(self):
+        '''do tripple name work'''
+        fommatname = greetUser("john",'Okoth','paul')
+        self.assertEqual(fommatname, 'John Paul Okoth')
 unittest.main()
 
 print("Enter 'q' to exit >")

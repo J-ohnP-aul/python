@@ -1,4 +1,7 @@
-def greetUser(fist, last):
+def greetUser(fist,last,middle=''):
     '''generate a neatly formated full name'''
-    fullName = fist + ' ' + last
+    if middle:
+        fullName = fist + ' ' + middle + " " + last
+    else:
+        fullName = fist + " "+ last
     return fullName.title()
