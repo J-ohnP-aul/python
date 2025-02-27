@@ -11,46 +11,53 @@ for line in data_lines:
 os.system('clear')
 def displayMenu():
     print(paint.Colors.COLOR_CYAN)
-    print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign in')
+    print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign up\n3.\tExit')
+    #handle invalid input erreor
     while True:
         try:
             option = int(input("\n  Enter an option __:"))
         except ValueError:
             os.system('clear')
             print(paint.Colors.COLOR_YELLOW)
-            print('\TINVALID INPUT\n')
-            print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign in')
+            print('\tINVALID INPUT\n')
+            print('\t>>>>login menu <<<<<<\n1.\tlogin\n2.\tsign up\n3.\tExit')
             
         else:
             return option
 
 opt = displayMenu()
-if opt == 1:    
-# print(userdata)
-    userName = input("Enter your user name pliz: ")
-    for name in userdata:
-        if name.title() == userName.title():
-            password = input('Enter your password: ')
-            if password == userdata[int(userdata.index(name)) + 2]:
-                print("\n>>>> welcomeback "+ userName + " !") 
+flag = 15925
+while flag:
+    if opt == 1:    
+    # print(userdata)
+        userName = input("Enter your user name pliz: ")
+        for name in userdata:
+            if name.title() == userName.title():
+                password = input('Enter your password: ')
+                if password == userdata[int(userdata.index(name)) + 2]:
+                    print("\n>>>> welcomeback "+ userName + " !") 
+                else:
+                    print("invalid password") 
+                    
             else:
-                print("invalid password")  
-        else:
-            continue
-            
-else:
-    name = input('enter your name: ')
-    id = input('enter your d NO: ')
-    pass1 = input('enter your password: ')
-    os.system('clear')
-    pass2 = input('reenter your password for comfirmation: ')
-    if pass1 == pass2:
+                continue
+                
+    elif opt==2:
+        #sign in option to add user to the database
+        name = input('enter your name: ')
+        id = input('enter your d NO: ')
+        pass1 = input('enter your password: ')
         os.system('clear')
-        print('password confirmed!!')
-        with open(filename, 'a') as fapend:
-            fapend.write('\n'+name +' '+ id + ' '+ pass1)
+        pass2 = input('reenter your password for comfirmation: ')
+        if pass1 == pass2:
+            os.system('clear')
+            print('password confirmed!!')
+            with open(filename, 'a') as fapend:
+                fapend.write('\n'+name +' '+ id + ' '+ pass1)
+        else:
+            print('invalid password!!')
     else:
-        print('invalid password!!')
+        flag=0
         
 
         
