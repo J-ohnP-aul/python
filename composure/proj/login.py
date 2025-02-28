@@ -26,7 +26,7 @@ def displayMenu():
             return option
 
 opt = displayMenu()
-flag = 15925
+flag = 1
 while flag:
     if opt == 1:    
     # print(userdata)
@@ -36,11 +36,12 @@ while flag:
                 password = input('Enter your password: ')
                 if password == userdata[int(userdata.index(name)) + 2]:
                     print("\n>>>> welcomeback "+ userName + " !") 
+                    exit
                 else:
                     print("invalid password") 
                     
             else:
-                continue
+                flag = 0
                 
     elif opt==2:
         #sign in option to add user to the database
@@ -56,8 +57,8 @@ while flag:
                 fapend.write('\n'+name +' '+ id + ' '+ pass1)
         else:
             print('invalid password!!')
+            flag=0
     else:
-        flag=0
-        
+        continue
 
         
