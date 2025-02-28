@@ -13,6 +13,28 @@ class NameTest(unittest.TestCase):
         self.assertEqual(fommatname, 'John Paul Okoth')
 unittest.main()
 
+class AnonymousQuery():
+    '''collect anonymous answers for suverys'''
+    def __init__(self,question):
+        self.question = question
+        self.response = []
+
+    def showQuery(self):
+        '''show the survey question'''
+        print(question)
+    
+    def storeResponse(self, newresponse):
+        '''store all the response to be given'''
+        self.response.append(newresponse)
+        
+    def showResults(self):
+        '''show all the responses that have been given'''
+        print('Survey results')
+        for response in response:
+            print("- "+ response)
+    
+    
+
 print("Enter 'q' to exit >")
 while True:
     first = input("Enter your first name: ")
