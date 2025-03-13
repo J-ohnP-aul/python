@@ -4,6 +4,7 @@ class Versions():
         self.name = name
         self.skill = skill
     def code(self):
+        
         print(self.name.title() + " chukua lapi msee ucord your way out\n\n")
     def learn(self):
         print("the pdf's are densly filled\nbut not for  " + self.name.title() + ",\nhe takes it all\ncomposure is a skill he adhears!!"
